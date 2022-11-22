@@ -1,7 +1,12 @@
 import React from 'react';
+import Layout from '../../components/Layout';
 
 const UserPage = () => {
-	return <div>UserPage</div>;
+	return (
+		<Layout nickName='Evgeny' id={1}>
+			<div>user page</div>
+		</Layout>
+	);
 };
 
 export default UserPage;
