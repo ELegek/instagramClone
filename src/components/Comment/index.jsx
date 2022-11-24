@@ -7,10 +7,10 @@ import React from 'react';
 // Styles
 import './style.css';
 
-const Comment = ({ nickName, text }) => {
+const Comment = ({ nickname, text }) => {
 	return (
 		<div className='cnCommentRoot'>
-			<span className='cnCommentName'>{nickName}</span>
+			<span className='cnCommentName'>{nickname}</span>
 			<span className='cnCommentText'>{text}</span>
 		</div>
 	);

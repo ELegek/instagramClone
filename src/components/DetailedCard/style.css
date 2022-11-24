@@ -4,6 +4,7 @@
 	width: 600px;
 	border: 1px solid #dbdbdb;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	margin-bottom: 20px;
 }
 
 .cnDetailedCardHeader {

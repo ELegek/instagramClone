@@ -5,7 +5,7 @@ export const getPhotos = () => {
 	return async (dispath) => {
 		try {
 			dispath(getPhotosStarted);
-			const response = api.photos.getPhotos({
+			const response = await api.photos.getPhotos({
 				params: {
 					_page: 0,
 					_limit: 5,
