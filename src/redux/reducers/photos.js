@@ -2,6 +2,7 @@ import {
 	GET_PHOTOS_FAILED,
 	GET_PHOTOS_STARTED,
 	GET_PHOTOS_SUCCESS,
+	GET_PHOTOS_TOTAL,
 } from '../actionCreators/photos';
 
 const initialState = {
@@ -26,6 +27,11 @@ export const photosReducer = (state = initialState, action) => {
 				...state,
 				photos: action.payload,
 				isPhotosLoading: false,
+			};
+		case GET_PHOTOS_TOTAL:
+			return {
+				...state,
+				totalPhotos: action.payload,
 			};
 
 		default: {

@@ -10,12 +10,18 @@ import './style.css';
 const MainPage = () => {
 	const photos = useSelector((state) => state.photos.photos);
 	const loading = useSelector((state) => state.photos.isPhotosLoading);
-
+	const total = useSelector((state) => state.photos.isPhotosLoading);
 	const dispath = useDispatch();
 
+	const [page, setPage] = React.useState(0);
+
 	useEffect(() => {
-		dispath(getPhotos());
-	}, []);
+		dispath(getPhotos(page));
+	}, [page]);
+
+	const nextHendler = () => {
+		setPage(page + 1);
+	};
 	return (
 		<Layout nickName='Evgeny'>
 			<div className='cnMainPageRoot'>
@@ -26,8 +32,8 @@ const MainPage = () => {
 				) : (
 					<InfiniteScroll
 						dataLength={photos.length}
-						next={() => console.log('next')}
-						hasMore={true}
+						next={nextHendler}
+						hasMore={photos.length < total}
 						loader={
 							<div className='cnMainLoaderContainer'>
 								<Bars color='#000BFF' height={15} width={15} />
